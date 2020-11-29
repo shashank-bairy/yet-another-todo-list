@@ -2,6 +2,8 @@
 
 Todo list application made using [styled-wind](https://github.com/product-ride/styled-wind)
 
+![Screenshot of Yet Another Todo List](./img/todo.png)
+
 ## What is styled wind?
 
 Styled-wind is a CSS-in-JS library, written on top of styled-components. It inherits everything from styled-components and also gives you the flexibility to use tailwind classnames along with styled-components.

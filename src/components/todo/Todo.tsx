@@ -16,6 +16,10 @@ export interface Task {
   done: boolean;
 }
 
+export interface TodoProps {
+  initialTasks?: Array<Task>;
+}
+
 const StyledTodo = styled.div`
   .mt-20;  
   .flex;
@@ -48,12 +52,8 @@ const StyledListItemContainer = styled.div`
   .shadow-lg;
 `;
 
-const Todo = () => {
-  const [tasks, setTasks] = useState<Array<Task>>([
-    { id: uuidv4(), task: "Task 1", done: false },
-    { id: uuidv4(), task: "Task 2", done: false },
-    { id: uuidv4(), task: "Task 3", done: false },
-  ]);
+const Todo = ({ initialTasks = [] }: TodoProps) => {
+  const [tasks, setTasks] = useState<Array<Task>>(initialTasks);
 
   const addTask = (task: string) => {
     if (task === "") return;
