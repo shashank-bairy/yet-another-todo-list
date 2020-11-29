@@ -27,11 +27,13 @@ const checkboxSizeStyle = {
 };
 
 const StyledCheckboxContainer = styled.div`
+  .cursor-pointer;  
   .flex;
   .items-center;
 `;
 
 const StyledCheckbox = styled.input`
+  .cursor-pointer;  
   ${(props: CheckboxProps) =>
     (props.size === "small" && checkboxSizeStyle.small) ||
     (props.size === "medium" && checkboxSizeStyle.medium) ||
@@ -39,6 +41,7 @@ const StyledCheckbox = styled.input`
 `;
 
 const StyledLabel = styled.label`
+  .cursor-pointer;
   .ml-3;
 `;
 
