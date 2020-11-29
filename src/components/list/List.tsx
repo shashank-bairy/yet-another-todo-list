@@ -4,7 +4,7 @@ import styled from "styled-wind";
 
 export interface ListProps {
   type: "ordered" | "unordered";
-  listStyleNone: boolean;
+  listStyleNone?: boolean;
   children: ReactNode;
 }
 
@@ -25,7 +25,7 @@ const StyledUnorderedList = styled.ul`
     `}
 `;
 
-const List = ({ type, children, listStyleNone }: ListProps) => {
+const List = ({ type, children, listStyleNone = false }: ListProps) => {
   return type === "ordered" ? (
     <StyledOrderedList listStyleNone={listStyleNone}>
       {children}

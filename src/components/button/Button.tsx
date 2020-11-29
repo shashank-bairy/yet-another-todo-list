@@ -60,7 +60,7 @@ StyledButton.defaultProps = {
 
 const Button = ({ label, style, backgroundColor, ...props }: ButtonProps) => {
   return (
-    <StyledButton style={style} {...props}>
+    <StyledButton style={{ outline: "none", ...style }} {...props}>
       {label}
     </StyledButton>
   );

@@ -87,6 +87,7 @@ const Todo = () => {
             id={task.id}
             label={task.task}
             checked={task.done}
+            size="large"
             onClick={() => toggleTask(task.id)}
           />
         </label>

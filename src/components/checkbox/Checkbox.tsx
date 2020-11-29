@@ -1,14 +1,30 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 
 import styled from "styled-wind";
 
-interface CheckboxProps {
+export interface CheckboxProps {
   id?: string;
   label?: string;
   checked?: boolean;
+  size?: "small" | "medium" | "large";
   style?: {};
-  onClick?: () => void;
+  onClick?: (e: MouseEvent<HTMLInputElement>) => void;
 }
+
+const checkboxSizeStyle = {
+  small: `
+    height: 0.75rem;
+    width: 0.75rem;
+  `,
+  medium: `
+    height: 1rem;
+    width: 1rem;
+  `,
+  large: `
+    height: 1.25rem;
+    width: 1.25rem;
+  `,
+};
 
 const StyledCheckboxContainer = styled.div`
   .flex;
@@ -17,8 +33,10 @@ const StyledCheckboxContainer = styled.div`
 `;
 
 const StyledCheckbox = styled.input`
-  .h-5;
-  .w-5;
+  ${(props: CheckboxProps) =>
+    (props.size === "small" && checkboxSizeStyle.small) ||
+    (props.size === "medium" && checkboxSizeStyle.medium) ||
+    (props.size === "large" && checkboxSizeStyle.large)};
 `;
 
 const StyledLabel = styled.label`
@@ -29,6 +47,7 @@ const Checkbox = ({
   id,
   label = "",
   checked = false,
+  size = "medium",
   onClick,
   style,
 }: CheckboxProps) => {
@@ -38,6 +57,7 @@ const Checkbox = ({
         id={id}
         type="checkbox"
         checked={checked}
+        size={size}
         onClick={onClick}
         style={style}
         readOnly
