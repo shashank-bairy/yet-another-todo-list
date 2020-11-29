@@ -28,7 +28,6 @@ const checkboxSizeStyle = {
 
 const StyledCheckboxContainer = styled.div`
   .flex;
-  .justify-center;
   .items-center;
 `;
 
